@@ -23,6 +23,60 @@ Three new preventative aides drugs were tested in clinical trials in 2015. The t
 
 We will subset the data by sex to see if the drug is sex specific.
 
+```{r}
+tabgroupinfected<- xtabs(~infected+group,data=Genvoyabub)
+tabgroupinfected
+```
+
+  The group infected data shows that group with with aids that had they drug resulted in 101 and the group that had the placebo has 110.
+```{r}
+barchartGC(tabgroupinfected, type= "percent")
+```
+
+  It appears that there is a relationship between drugs and placebo is the group infected by the drug for aids. Those in taking the placebo with aids have reached about 50 percent.
+
+```{r}
+chisqtestGC(tabgroupinfected)
+```
+
+  Our P-Value is 0.5735 The chances of getting such a result are extremely big if the null hypothesis is true. We therefore choose to accept the null hypothesis.
+
+```{r}
+GenvoyabubF <- filter(Genvoyabub,sex == "F")
+tabgroupinfectedF<-xtabs(~infected+group,data=GenvoyabubF)
+tabgroupinfectedF
+```
+
+  The female data shows that group with with aids that had they drug resulted in 54 and the group that had the placebo has 62.
+```{r}
+barchartGC(tabgroupinfectedF, type= "percent")
+```
+
+   It appears that there is a relationship between drugs and placebo is the females group infected by the drug for aids. Those in taking the placebo with aids have reached about 50 percent. Yet the ones that have no aids thta took the placebo and the drug had the same percentage.
+```{r}
+chisqtestGC(tabgroupinfectedF)
+```
+
+  Our P-Value is 0.5055 The chances of getting such a result are extremely big if the null hypothesis is true. We therefore choose to accept the null hypothesis.
+
+```{r}
+GenvoyabubM <- filter(Genvoyabub,sex == "M")
+tabgroupinfectedM<-xtabs(~infected+group,data=GenvoyabubM)
+tabgroupinfectedM
+barchartGC(tabgroupinfectedM, type= "percent")
+```
+
+  The male data shows that group with with aids that had they drug resulted in 47 and the group that had the placebo has 48.
+```{r}
+barchartGC(tabgroupinfectedM, type= "percent")
+```
+
+  It appears that there is a relationship between drugs and placebo is the males group infected by the drug for aids. Those in taking the placebo with aids have reached about 50 percent. Yet the ones that have no aids that took the placebo and the drug had the same percentage but they were higher than those who had aids.
+```{r}
+chisqtestGC(tabgroupinfectedM)
+```
+
+  Our P-Value is 1. The chances of getting such a result are extremly big if the null hypothesis is true. We therefore choose to accept the null hypothesis.
 
 # Atriplavast
 
