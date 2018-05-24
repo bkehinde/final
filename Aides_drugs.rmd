@@ -28,6 +28,19 @@ We will subset the data by sex to see if the drug is sex specific.
 
 We will subset the data by sex to see if the drug is sex specific.
 
+```{r}
+Atripla <- xtabs (~infected +group, data=Atriplavast) 
+Atripla
+```
+The groups infeccted with Aids, 103 of them took Atriplavast and 131 of them took the placebo.
+
+```{r}
+barchartGC (Atripla, type="percent")
+```
+
+It appears that there is problem because people who have aids and took the drug and the people who have aids and took the placebo don't havee a 50/50 scale this shows a difference. It also appears that people who have no disease that took the placebo and the people that took the drug have about the same scale so there isn't much of a difference.
+
+
 
 
 # abacavirinol
