@@ -40,6 +40,22 @@ barchartGC (Atripla, type="percent")
 
 It appears that there is problem because people who have aids and took the drug and the people who have aids and took the placebo don't havee a 50/50 scale this shows a difference. It also appears that people who have no disease that took the placebo and the people that took the drug have about the same scale so there isn't much of a difference.
 
+```{r}
+chisqtestGC(Atripla)
+```
+
+The p value is 0.0699. Given the condition of the null hypothesis if the null hypothesis is true then it would happen the probability of 3.2 percent of the time. This situation resulted in us failing to reject the null hypothesis because of the condition of it being higher than .05.
+
+
+
+Female Atriplavast
+
+```{r}
+AF<- filter(Atriplavast, sex=="F")
+AF2<- xtabs (~infected +group, data=AF)
+AF2
+```
+
 
 
 
