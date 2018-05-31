@@ -34,6 +34,32 @@ We will subset the data by sex to see if the drug is sex specific.
 
 We will subset the data by sex to see if the drug is sex specific.
 
+```{r}
+Abacavirinol<- xtabs (~infected +group, data=abacavirinol) 
+Abacavirinol
+```
+ The groups infected with Aids, 118 of them took Abacavirinol and 121 of them took the placebo.The groups not infected with Aids, 2082 of them took Abacavirinol and 2079 of them took the placebo.
+ 
+```{r}
+barchartGC (Abacavirinol, type="percent")
+```
+   It appears that there isn't a problem because people who have aids and took the drug and the people who have aids and took the placebo do have a 50/50 scale this shows not much of a difference because of the 5 percent gap. It also appears that people who have no disease that took the placebo and the people that took the drug have about the same scale so there isn't much of a difference. It shows that the people that didn't have aids ended of getting aids and also the people who didn't have aids ended up getting aids because of the placebo. 
+   
+```{r}
+chisqtestGC(Abacavirinol)
+```
+
+   The p value is 0.8942. Given the condition of the null hypothesis if the null hypothesis is true then it would happen the probability of 89.4 percent of the time. This situation resulted in us failing to reject the null hypothesis because of the condition of it being higher than .05.
+
+
+
+ The groups infected with Aids, 53 of them took Atriplavast and 28 of them took the placebo.The groups not infected with Aids, 1080 of them took Atriplavast and 1105 of them took the placebo.
+
+
+
+
+
+
 
 
 
