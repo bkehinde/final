@@ -162,6 +162,83 @@ chisqtestGC(AtriplavastM2)
 
 We will subset the data by sex to see if the drug is sex specific.
 
+```{r}
+Abacavirinol<- xtabs (~infected +group, data=abacavirinol) 
+Abacavirinol
+```
+ 
+   The groups infected with Aids, 118 of them took Abacavirinol and 121 of them took the placebo.The groups not infected with Aids, 2082 of them took Abacavirinol and 2079 of them took the placebo.
+ 
+```{r}
+barchartGC (Abacavirinol, type="percent")
+```
+  
+   It appears that there isn't a problem because people who have aids and took the drug and the people who have aids and took the placebo do have a 50/50 scale this shows not much of a difference because of the 5 percent gap. It also appears that people who have no disease that took the placebo and the people that took the drug have about the same scale so there isn't much of a difference. It means that the people that didn't have aids ended of getting aids and also the people who didn't have aids ended up getting aids because of the placebo. 
+   
+```{r}
+chisqtestGC(Abacavirinol)
+```
+
+  The p value is 0.8942. Given the condition of the null hypothesis if the null hypothesis is true then the probability of it happening is 89.4 percent of the time. This situation resulted in us failing to reject the null hypothesis because of the condition of it being higher than .05.
+
+Female Atriplavast
+
+```{r}
+abacavirinolF<- filter(abacavirinol,sex=="F")
+AbacavirinolF2<- xtabs (~infected +group, data=abacavirinolF)
+AbacavirinolF2
+```
+
+  The female groups infected with Aids, 40 of them took Abacavirinol and 63 of them took the placebo.The groups not infected with Aids, 1060 of them took Abacavirinol and 1037 of them took the placebo.
+
+```{r}
+barchartGC (AbacavirinolF2, type="percent")
+```
+ 
+  It appears that there is problem because people who have aids and took the drug and the people who have aids and took the placebo don't have a 50/50 scale this shows a difference.This means the people with aids that took Abacavirinol had more severe aids and the people with aids that took the placebo still have ever more aids but not as much as the people with Abacavirinol. It also appears that people who have no disease that took the placebo and the people that took the drug have about the same scale so there isn't much of a difference that's because of the split of people in each group.
+  
+```{r}
+chisqtestGC(AbacavirinolF2)
+```
+ 
+   The p value is .0264. Given the condition of the null hypothesis if the null hypothesis is true then it would happen the probability of 2.64 percent of the time. This situation resulted in us to reject the null hypothesis because of the condition of it being lower than .05.
+   
+
+```{r}
+abacavirinolM<- filter(abacavirinol, sex=="M")
+AbacavirinolM2<- xtabs (~infected +group, data=abacavirinolM)
+AbacavirinolM2
+```
+
+  The male groups infected with Aids, 78 of them took Abacavirinol and 58 of them took the placebo.The groups not infected with Aids, 1022 of them took Abacavirinol and 1042 of them took the placebo.
+
+```{r}
+barchartGC (AbacavirinolM2, type="percent")
+```
+  
+  It appears in the first bar chart that there is a more than 15 percent difference between the people that had aids and took the placebo and the people that took the drug. This means something is wrong.The people that took the drug has a less chance of getting more aids and the people that had aids that took a placebo have a more severe chance of getting more aids. This means more people should take the Abacavirinol drug. The other bar chart where the people with no aids had took the drug and the people that took the placebo is also a problem because the groups were split up which is why there is much of a difference.
+    
+```{r}
+chisqtestGC(AbacavirinolM2)
+```
+
+  The p value is 0.0926. Given the condition of the null hypothesis if the null hypothesis is true then it would happen the probability of 9.26 percent of the time. This situation resulted in us failing to reject the null hypothesis because of the condition of it being that it's higher than .05.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
