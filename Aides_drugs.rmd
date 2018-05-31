@@ -61,7 +61,7 @@ AbacavirinolF2<- xtabs (~infected +group, data=abacavirinolF)
 AbacavirinolF2
 ```
 
-  The groups infected with Aids, 40 of them took Abacavirinol and 63 of them took the placebo.The groups not infected with Aids, 1060 of them took Abacavirinol and 1037 of them took the placebo.
+  The female groups infected with Aids, 40 of them took Abacavirinol and 63 of them took the placebo.The groups not infected with Aids, 1060 of them took Abacavirinol and 1037 of them took the placebo.
 
 ```{r}
 barchartGC (AbacavirinolF2, type="percent")
@@ -82,7 +82,7 @@ AbacavirinolM2<- xtabs (~infected +group, data=abacavirinolM)
 AbacavirinolM2
 ```
 
-  The groups infected with Aids, 78 of them took Abacavirinol and 58 of them took the placebo.The groups not infected with Aids, 1022 of them took Abacavirinol and 1042 of them took the placebo.
+  The male groups infected with Aids, 78 of them took Abacavirinol and 58 of them took the placebo.The groups not infected with Aids, 1022 of them took Abacavirinol and 1042 of them took the placebo.
 
 ```{r}
 barchartGC (AbacavirinolM2, type="percent")
