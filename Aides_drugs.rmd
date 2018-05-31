@@ -58,7 +58,7 @@ AtriplavastF2
 ```
 
 
-  The groups infected with Aids, 53 of them took Atriplavast and 28 of them took the placebo.The groups not infected with Aids, 1080 of them took Atriplavast and 1105 of them took the placebo.
+  The female groups infected with Aids, 53 of them took Atriplavast and 28 of them took the placebo.The groups not infected with Aids, 1080 of them took Atriplavast and 1105 of them took the placebo.
 
 ```{r}
 barchartGC (AtriplavastF2, type="percent")
@@ -79,7 +79,7 @@ AtriplavastM2<- xtabs (~infected +group, data=AtriplavastM)
 AtriplavastM2
 ```
 
-   The groups infected with Aids, 50 of them took Atriplavast and 103 of them took the placebo.The groups not infected with Aids, 1083 of them took Atriplavast and 1030 of them took the placebo.
+   The male groups infected with Aids, 50 of them took Atriplavast and 103 of them took the placebo.The groups not infected with Aids, 1083 of them took Atriplavast and 1030 of them took the placebo.
 
 ```{r}
 barchartGC (AtriplavastF2, type="percent")
