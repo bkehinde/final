@@ -32,27 +32,66 @@ We will subset the data by sex to see if the drug is sex specific.
 Atripla <- xtabs (~infected +group, data=Atriplavast) 
 Atripla
 ```
-The groups infeccted with Aids, 103 of them took Atriplavast and 131 of them took the placebo.
+
+  The groups infected with Aids, 103 of them took Atriplavast and 131 of them took the placebo.The groups not infected with Aids, 2163 of them took Atriplavast and 2135 of them took the placebo.
 
 ```{r}
 barchartGC (Atripla, type="percent")
 ```
 
-It appears that there is problem because people who have aids and took the drug and the people who have aids and took the placebo don't havee a 50/50 scale this shows a difference. It also appears that people who have no disease that took the placebo and the people that took the drug have about the same scale so there isn't much of a difference.
+   It appears that there is problem because people who have aids and took the drug and the people who have aids and took the placebo don't have a 50/50 scale this shows a difference. It also appears that people who have no disease that took the placebo and the people that took the drug have about the same scale so there isn't much of a difference.
 
 ```{r}
 chisqtestGC(Atripla)
 ```
 
-The p value is 0.0699. Given the condition of the null hypothesis if the null hypothesis is true then it would happen the probability of 3.2 percent of the time. This situation resulted in us failing to reject the null hypothesis because of the condition of it being higher than .05.
+   The p value is 0.0699. Given the condition of the null hypothesis if the null hypothesis is true then it would happen the probability of 6.99 percent of the time. This situation resulted in us failing to reject the null hypothesis because of the condition of it being higher than .05.
 
 
 
 Female Atriplavast
 
+```{r}
+AtriplavastF<- filter(Atriplavast, sex=="F")
+AtriplavastF2<- xtabs (~infected +group, data=AtriplavastF)
+AtriplavastF2
+```
 
 
+  The groups infected with Aids, 53 of them took Atriplavast and 28 of them took the placebo.The groups not infected with Aids, 1080 of them took Atriplavast and 1105 of them took the placebo.
 
+```{r}
+barchartGC (AtriplavastF2, type="percent")
+```
+
+  It appears that there is problem because people who have aids and took the drug and the people who have aids and took the placebo don't have a 50/50 scale this shows a difference. It also appears that people who have no disease that took the placebo and the people that took the drug have about the same scale so there isn't much of a difference that's because of the spliit of people in each group.
+
+```{r}
+chisqtestGC(AtriplavastF2)
+```
+
+
+  The p value is .0066. Given the condition of the null hypothesis if the null hypothesis is true then it would happen the probability of .66 percent of the time. This situation resulted in us to reject the null hypothesis because of the condition of it being that it's lower than .05.
+
+```{r}
+AtriplavastM<- filter(Atriplavast, sex=="M")
+AtriplavastM2<- xtabs (~infected +group, data=AtriplavastM)
+AtriplavastM2
+```
+
+   The groups infected with Aids, 50 of them took Atriplavast and 103 of them took the placebo.The groups not infected with Aids, 1083 of them took Atriplavast and 1030 of them took the placebo.
+
+```{r}
+barchartGC (AtriplavastF2, type="percent")
+```
+  
+  It appears in the first bar chart that there is a 20 percent difference between the people that had aids and took the placebo and the people that took the drug. This means something is wrong. The other bar chart where the people with no aids had took the drug and the people that took the placebo is also a problem because the groups were split up which is why there is much of a difference.
+
+```{r}
+chisqtestGC(AtriplavastM2)
+```
+
+  The p value is 0. Given the condition of the null hypothesis if the null hypothesis is true then it would happen the probability of 0 percent of the time. This situation resulted in us to reject the null hypothesis because of the condition of it being that it's lower than .05.
 
 # abacavirinol
 
